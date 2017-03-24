@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="LeverXCars25.core_db.model::Cars2Services" applyPrivilegeType="NONE" dataCategory="CUBE" dimensionType="" schemaVersion="3.0" defaultClient="$$client$$" visibility="reportingEnabled" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="Cars2Services Calculation View"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="LeverXCars25.core_db.data::core_model.Car">
+    <resourceUri>LeverXCars25.core_db.data::core_model.Car</resourceUri>
+  </DataSource>
+  <DataSource id="LeverXCars25.core_db.data::core_model.Service">
+    <resourceUri>LeverXCars25.core_db.data::core_model.Service</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="CarService" joinType="leftOuter" cardinality="C1_N">
+    <viewAttributes>
+      <viewAttribute id="CUSTID"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="CUSTID"/>
+      </viewAttribute>
+      <viewAttribute id="CAR_DESCR"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="DESCR"/>
+      </viewAttribute>
+      <viewAttribute id="LICPLATE"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="LICPLATE"/>
+      </viewAttribute>
+      <viewAttribute id="MODEL"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="MODEL"/>
+      </viewAttribute>
+      <viewAttribute id="VIN"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="VIN"/>
+      </viewAttribute>
+      <viewAttribute id="AMOUNT"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="AMOUNT"/>
+      </viewAttribute>
+      <viewAttribute id="CURRENCY"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="CURRENCY"/>
+      </viewAttribute>
+      <viewAttribute id="SRV_DESCR"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="DESCR_1"/>
+      </viewAttribute>
+      <viewAttribute id="STARTDATE"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="STARTDATE"/>
+      </viewAttribute>
+      <viewAttribute id="ENDDATE"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="ENDDATE"/>
+      </viewAttribute>
+      <viewAttribute id="SERVICEID"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="SERVICEID"/>
+      </viewAttribute>
+      <viewAttribute id="CARID"><descriptions/><descriptions/><descriptions/><descriptions/>
+        <descriptions defaultDescription="CARID"/>
+      </viewAttribute></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="LeverXCars25.core_db.data::core_model.Car">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTID" source="CUSTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CAR_DESCR" source="DESCR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LICPLATE" source="LICPLATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODEL" source="MODEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VIN" source="VIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARID" source="CARID"/>
+    </input>
+    <input node="LeverXCars25.core_db.data::core_model.Service">
+      <mapping xsi:type="Calculation:AttributeMapping" target="AMOUNT" source="AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CURRENCY" source="CURRENCY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SRV_DESCR" source="DESCR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STARTDATE" source="STARTDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ENDDATE" source="ENDDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SERVICEID" source="SERVICEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CARID" source="CARID"/>
+    </input>
+    <joinAttribute name="CARID"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="CarService">
+  <attributes>
+    <attribute id="CUSTID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTID"/>
+      <keyMapping columnObjectName="CarService" columnName="CUSTID"/>
+    </attribute>
+    <attribute id="CAR_DESCR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CAR_DESCR"/>
+      <keyMapping columnObjectName="CarService" columnName="CAR_DESCR"/>
+    </attribute>
+    <attribute id="LICPLATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LICPLATE"/>
+      <keyMapping columnObjectName="CarService" columnName="LICPLATE"/>
+    </attribute>
+    <attribute id="MODEL" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODEL"/>
+      <keyMapping columnObjectName="CarService" columnName="MODEL"/>
+    </attribute>
+    <attribute id="VIN" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VIN"/>
+      <keyMapping columnObjectName="CarService" columnName="VIN"/>
+    </attribute>
+    <attribute id="CURRENCY" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CURRENCY"/>
+      <keyMapping columnObjectName="CarService" columnName="CURRENCY"/>
+    </attribute>
+    <attribute id="SRV_DESCR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SRV_DESCR"/>
+      <keyMapping columnObjectName="CarService" columnName="SRV_DESCR"/>
+    </attribute>
+    <attribute id="SERVICEID" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SERVICEID"/>
+      <keyMapping columnObjectName="CarService" columnName="SERVICEID"/>
+    </attribute>
+  
+    <attribute id="CARID" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CARID"/>
+      <keyMapping columnObjectName="CarService" columnName="CARID"/>
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="AMOUNT" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="AMOUNT"/>
+      <measureMapping columnObjectName="CarService" columnName="AMOUNT"/>
+    </measure>
+    <measure id="STARTDATE" order="9" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="STARTDATE"/>
+      <measureMapping columnObjectName="CarService" columnName="STARTDATE"/>
+    </measure>
+    <measure id="ENDDATE" order="10" aggregationType="min" measureType="simple">
+      <descriptions defaultDescription="ENDDATE"/>
+      <measureMapping columnObjectName="CarService" columnName="ENDDATE"/>
+    </measure></baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="140"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="CarService" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="232"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape modelObjectName="LeverXCars25.core_db.data::core_model.Car" modelObjectNameSpace="CarService" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="LeverXCars25.core_db.data::core_model.Service" modelObjectNameSpace="CarService" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="342" y="22"/>
+      <rectangleSize width="374"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
