@@ -1,4 +1,4 @@
-{
+{ 
     "file_suffixes": {
         "hdbflowgraph": {
             "plugin_name": "com.sap.hana.di.flowgraph",

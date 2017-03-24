@@ -1,5 +1,5 @@
 {
-	"name": "web-approuter",
+	"name": "Web-approuter",
 	"dependencies": {
 		"approuter": "1.6.3"
 	},
